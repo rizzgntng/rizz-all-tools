@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rizz All Tools • 50+ Tools Berguna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .title-font { font-family: 'Playfair Display', sans-serif; }
+        .tool-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .tool-card:hover { transform: translateY(-12px) scale(1.03); }
+        .glow-text { text-shadow: 0 0 20px rgb(234 179 8); }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white">
+    <nav class="bg-black border-b border-yellow-400/30 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-yellow-400 rounded-2xl flex items-center justify-center text-2xl">🔥</div>
+                <div><span class="title-font text-3xl font-bold tracking-tighter">Rizz</span><span class="text-yellow-400 text-3xl font-bold">All Tools</span></div>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#tools" onclick="document.getElementById('tools').scrollIntoView({behavior:'smooth'})" class="nav-link">Tools</a>
+                <a href="#ai" class="nav-link">AI Rizz</a>
+                <a href="#generate" class="nav-link">Generator</a>
+            </div>
+            <button onclick="copyLink()" class="bg-yellow-400 text-black px-6 py-3 rounded-3xl font-bold flex items-center gap-2">Bagikan Link</button>
+        </div>
+    </nav>
+
+    <header class="min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-zinc-950">
+        <div class="text-center px-6">
+            <h1 class="title-font text-7xl font-bold glow-text">RIZZ ALL TOOLS</h1>
+            <p class="text-2xl text-zinc-300 mt-6">50+ Tools Berguna 100% Gratis 🔥</p>
+            <a href="#tools" onclick="document.getElementById('tools').scrollIntoView({behavior:'smooth'})" class="mt-10 inline-block bg-yellow-400 text-black px-10 py-5 rounded-3xl font-bold text-xl">Lihat 50+ Tools</a>
+        </div>
+    </header>
+
+    <section id="tools" class="max-w-7xl mx-auto px-6 py-20">
+        <h2 class="title-font text-5xl font-bold text-center mb-12">50+ TOOLS BERGUNA</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="tools-grid">
+            <!-- Tools akan diisi otomatis -->
+        </div>
+    </section>
+
+    <script>
+        const tools = [
+            {icon:"💬", title:"Generator Chat Flirt", desc:"Ribuan pesan chat siap pakai"},
+            {icon:"📝", title:"Caption Insta Rizz", desc:"Caption hot & lucu"},
+            {icon:"💰", title:"Crypto Cheat Sheet", desc:"Info coin + strategi"},
+            {icon:"🎮", title:"Free Fire ML Cheat", desc:"Hack diamond unlimited"},
+            {icon:"🎵", title:"Lirik Lagu Viral", desc:"Status IG/TikTok"},
+            {icon:"🗣️", title:"Voice Changer Rizz", desc:"Ubah suara jadi mesum"},
+            {icon:"📱", title:"Android APK Unlimited", desc:"ChatGPT, Spotify gratis"},
+            {icon:"🌐", title:"VPN Gratis Premium", desc:"Nonton Netflix bebas"},
+            {icon:"🎨", title:"AI Avatar Generator", desc:"Avatar cewek mesum"},
+            {icon:"📸", title:"Enhance Photo Rizz", desc:"Bikin lo keliatan ganteng"},
+            {icon:"🔥", title:"Rizz Me Card", desc:"Kartu rizz gratis"},
+            {icon:"📢", title:"Telegram Bot Rizz", desc:"Bot chat otomatis"},
+            {icon:"💊", title:"Supplement Cheat", desc:"Supplement online gratis"},
+            {icon:"📚", title:"Ebook Gratis", desc:"Buku romansa & motivasi"},
+            {icon:"🎧", title:"Podcast Rizz", desc:"Episode hot"},
+            {icon:"🏆", title:"Game Cheat", desc:"Valorant, PUBG, dll"},
+            {icon:"💰", title:"Drop Money Online", desc:"Cara dapat uang cepat"},
+            {icon:"🔥", title:"Rizz Dating App", desc:"App kencan gratis"},
+            {icon:"📱", title:"Instagram Follower", desc:"Follower gratis"},
+            {icon:"💡", title:"Rizz Journal", desc:"Catat rizz lo"},
+            {icon:"🌍", title:"Translation Tool", desc:"Terjemah bahasa"},
+            {icon:"🎬", title:"Movie & Series Cheat", desc:"Streaming gratis"},
+            {icon:"🎮", title:"Steam Cheat", desc:"Game unlock gratis"},
+            {icon:"📱", title:"TikTok Follower", desc:"Follower gratis"},
+            {icon:"💰", title:"Cash App Cheat", desc:"Cara dapat uang"},
+            {icon:"🔥", title:"Flirt Text Generator", desc:"Pesan mesum"},
+            {icon:"📸", title:"Photo Editor", desc:"Edit foto hot"},
+            {icon:"🎵", title:"Spotify Free", desc:"Musik bebas"},
+            {icon:"🌐", title:"YouTube Downloader", desc:"Video download"},
+            {icon:"💡", title:"Rizz Meme Generator", desc:"Meme lucu"},
+            {icon:"📚", title:"Book Summary", desc:"Ringkas buku"},
+            {icon:"🎧", title:"Podcast Indonesia", desc:"Podcast lokal"},
+            {icon:"🏆", title:"Achievement List", desc:"Game achievement"},
+            {icon:"💰", title:"Gig Economy", desc:"Dapat uang dari gig"},
+            {icon:"🔥", title:"Rizz Status", desc:"Status wa/hot"},
+            {icon:"📱", title:"WhatsApp Status", desc:"Status wa"},
+            {icon:"💡", title:"Rizz Quote", desc:"Kata bijak rizz"},
+            {icon:"🌍", title:"Language Translator", desc:"Terjemah real-time"},
+            {icon:"🎬", title:"Netflix Cheat", desc:"Download Netflix"},
+            {icon:"🎮", title:"Roblox Cheat", desc:"Roblox unlimited"},
+            {icon:"📱", title:"CapCut Edit", desc:"Edit video hot"},
+            {icon:"💰", title:"Freelance Gig", desc:"Dapat uang online"},
+            {icon:"🔥", title:"Rizz AI Chat", desc:"Chat AI rizz"},
+            {icon:"📸", title:"AI Photo Rizz", desc:"Foto AI hot"},
+            {icon:"🎵", title:"Music Viral", desc:"Lagu terbaru"},
+            {icon:"🌐", title:"VPN Unlimited", desc:"VPN gratis"},
+            {icon:"🏆", title:"Skill Cheat", desc:"Skill game gratis"}
+        ];
+
+        function renderTools() {
+            const container = document.getElementById('tools-grid');
+            container.innerHTML = '';
+            tools.forEach(tool => {
+                const card = document.createElement('div');
+                card.className = 'tool-card bg-zinc-900 border border-yellow-400/20 rounded-3xl p-6 cursor-pointer hover:border-yellow-400';
+                card.innerHTML = `
+                    <div class="text-5xl mb-6">${tool.icon}</div>
+                    <div class="font-semibold text-xl">${tool.title}</div>
+                    <div class="text-zinc-400 text-sm mt-2">${tool.desc}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        window.onload = function() {
+            renderTools();
+        };
+    </script>
+</body>
+</html>
